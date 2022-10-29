@@ -19,8 +19,8 @@ from scipy.stats import ttest_ind
 
 from transitions import Machine
 
-from str_help import generate_attr, snake_to_title
-from sns_help import kde_boxen_qq
+from .str_help import generate_attr, snake_to_title
+from .sns_help import kde_boxen_qq
 
 # TODO: add dimensions concept
 # TODO: configure logging, not IPython display
@@ -282,7 +282,6 @@ class EDA:
 
     def compare_distributions(self, df_name, num_col_name, cat_col_name):
 
-
         sns.displot(
             data=self._dataframes_dict[df_name],
             x=num_col_name, hue=cat_col_name,
@@ -318,6 +317,7 @@ class EDA:
         self._print_statistical_test(ttest_ind(first, second))
 
         # TODO: ANOVA or something else?
+        # TODO: Mann-Whitney U test for non-normal distributions
 
 
 

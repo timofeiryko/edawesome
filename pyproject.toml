@@ -1,12 +1,17 @@
 [tool.poetry]
 name = "edawesome"
-version = "0.1.0"
+version = "0.1.3"
 description = ""
 authors = ["Timofei Ryko <timofei.ryko@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+seaborn = "^0.12.1"
+kaggle = "^1.5.12"
+scipy = "^1.9.3"
+ipython = "^8.5.0"
+transitions = "^0.9.0"
 
 
 [build-system]

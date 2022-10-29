@@ -7,7 +7,7 @@ import statsmodels.api as sm
 
 from typing import Optional, Tuple
 
-from str_help import snake_to_title
+from .str_help import snake_to_title
 
 def kde_boxen_qq(
     dataframe: pd.DataFrame, col_name: str,
