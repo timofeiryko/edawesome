@@ -1,4 +1,4 @@
-"""Functions designed to apply to pd series"""
+"""Functions designed to apply to pandas dataframes."""
 
 from typing import Dict, List, Optional, Sequence
 
@@ -7,6 +7,7 @@ def multi_replace(
     row: str, mapper: Dict[str, Sequence[str]],
     default: Optional[str] = None
 ) -> str:
+    """Replace a string with another string based on a mapper."""
 
     if default is None:
         default = row
@@ -20,4 +21,5 @@ def multi_replace(
 def cat_to_num(
     row: str, order: List[str]
 ) -> float:
+    """Convert a categorical variable to a number based on an order in provided list."""
     return order.index(row) / (len(order) - 1)

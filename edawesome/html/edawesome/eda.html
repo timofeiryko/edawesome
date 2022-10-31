@@ -1,0 +1,1713 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>edawesome.eda API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>edawesome.eda</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from dataclasses import dataclass, field
+from collections import namedtuple
+from typing import Optional, List
+import functools
+import warnings
+
+from glob import glob
+import os
+import sqlite3
+
+from kaggle.api.kaggle_api_extended import KaggleApi
+import patoolib
+
+os.environ[&#34;PYARROW_IGNORE_TIMEZONE&#34;] = &#34;1&#34;
+# It is required to set this environment variable to &#39;1&#39;
+# in both driver and executor sides if you use pyarrow&gt;=2.0.0.
+
+
+from pyspark.sql import SparkSession
+from pyspark.pandas import read_csv as spark_read_csv
+import pyspark
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from IPython.display import display, Markdown
+
+
+from transitions import Machine
+
+from .str_help import generate_attr, snake_to_title, get_files
+from .sns_help import kde_boxen_qq
+from .pd_help import display_df
+from .eda_help import compare_distributions
+
+from .configs import CATEGORY_MAX
+
+# TODO: add dimensions concept
+# TODO: configure logging as a possible alternative to IPython display
+
+def basename_no_ext(path: str) -&gt; str:
+    return os.path.splitext(os.path.basename(path))[0]
+
+def _check_duplicated_features(func):
+    &#34;&#34;&#34;Decorator for checking duplicated features&#34;&#34;&#34;
+    @functools.wraps(func)
+    def wrapper(self, *args, **kwargs):
+        all_list = [col for df in self._dataframes_dict.values() for col in df.columns]
+        if len(all_list) != len(set(all_list)):
+            warnings.warn(&#39;There are duplicated features in the dataframes!&#39;)
+        return func(self, *args, **kwargs)
+    return wrapper
+
+@dataclass
+class EDA:
+    &#34;&#34;&#34;Main class for simple and robust EDA with pandas and seaborn.&#34;&#34;&#34;
+
+    data_dir_path: str
+    kaggle_datasets: Optional[List[str]] = None
+    archives: Optional[List[str]] = None
+    # List of supported archives can be found on patool github page: https://github.com/wummel/patool
+    # TODO: dictionary with csv files as keys and separator as values
+
+    state: Machine = field(init=False)
+
+    silent: Optional[bool] = False
+    concat: Optional[bool] = False
+    use_polars: Optional[bool] = False
+    use_pyspark: Optional[bool] = False
+    lazy_sqlite: Optional[bool] = False
+    
+    load_limit: Optional[int] = None
+    pandas_mem_limit: Optional[int] = 1024**2
+    pyspark_mem_limit: Optional[str] = &#39;4g&#39;
+
+    @property
+    def data_list(self) -&gt; List[pd.DataFrame]:
+        return list(self._dataframes_dict.keys())
+
+    def __post_init__(self) -&gt; None:
+
+        if self.concat or self.use_polars:
+            raise NotImplementedError
+            # self.concat will be used to concat all the loaded dataframes into one
+            # self.use_polars will be used to load data with polars instead of pandas (it is faster and uses less memory)
+
+        states = [
+            &#39;init&#39;,
+            &#39;loaded&#39;,
+            &#39;cleaned&#39;,
+            &#39;categorized&#39;
+        ]
+        self.state = Machine(states=states, initial=&#39;init&#39;)
+        self.state.add_ordered_transitions(loop=False)
+
+        if self.use_polars and self.use_pyspark:
+            raise ValueError(&#39;You can use only one of polars or pyspark! Later there will be a map funcionality.&#39;)
+        
+        if self.use_pyspark and self.load_limit:
+            raise ValueError(&#39;You can use load_limit only with pandas and polars!&#39;)
+
+        if self.pandas_mem_limit and not (self.use_polars or self.use_pyspark):
+            raise ValueError(&#39;You can use pandas_mem_limit only with pandas and polars! It is needed to define minimum number of rows to use pyspark or polars.&#39;)
+
+        if self.pyspark_mem_limit and not self.use_pyspark:
+            raise ValueError(&#39;You can use pyspark_mem_limit only with pyspark!&#39;)
+
+    def next(self) -&gt; None:
+        &#34;&#34;&#34;Change state to the next one.&#34;&#34;&#34;
+        self.state.next_state()
+        display(Markdown(f&#39;### EDA is in {self.state.state} state now&#39;))
+        if self.state.state == &#39;loaded&#39;:
+            # Separate messages into some &#34;front-end&#34; class or module
+            message = &#39;\n&#39;.join([
+                &#39;Now you can drop or impute missing values. Here are some useful methods:&#39;,
+                &#39;- `clean_check` - check number for missing values in each column&#39;,
+                &#39;- `drop_empty_columns` -  drop columns with a lot of missing values&#39;,
+                &#39;- `clean` - drop duplicates and missing values (deprecated)&#39;
+            ])
+            display(Markdown(message))
+
+    @staticmethod
+    def prettify_col_names(df: pd.DataFrame) -&gt; None:
+        &#34;&#34;&#34;Rename columns to snake case and set index if it is auto index.&#34;&#34;&#34;
+
+        # detect auto index
+        first_col = df.columns[0]
+        if first_col == &#39;Unnamed: 0&#39;:
+            df.rename(columns={first_col: &#39;index&#39;}, inplace=True)
+            first_col = &#39;index&#39;
+
+        if (df[first_col] == df.index).all():
+            df.set_index(first_col, inplace=True)
+
+        # columns to snake case
+        df.columns = df.columns.to_series().apply(generate_attr)
+
+    @staticmethod
+    def display_df(name: str, df: pd.DataFrame) -&gt; None:
+        &#34;&#34;&#34;Display dataframe with shape.&#34;&#34;&#34;
+        display_df(name, df)
+
+    def _add_df(self, name: str, df):
+        &#34;&#34;&#34;Add dataframe to the EDA object.&#34;&#34;&#34;
+
+        if self.state.state != &#39;init&#39;:
+            raise ValueError(f&#39;Dataframes can be added only in init state, not {self.state.state}!&#39;)
+
+        if hasattr(self, name):
+            raise ValueError(f&#39;Dataframe or other attribute with name {name} already exists. All filenames must be unique!&#39;)
+
+        self.prettify_col_names(df)
+        self._dataframes_dict[name] = df
+
+        if not self.silent:
+            self.display_df(name, df)
+
+    def rename_df(self, old_name: str, new_name: str) -&gt; None:
+        &#34;&#34;&#34;Rename the dataframe.&#34;&#34;&#34;
+
+        if old_name not in self._dataframes_dict.keys():
+            raise ValueError(f&#39;Dataframe with name {old_name} does not exist!&#39;)
+            
+        if new_name in self._dataframes_dict.keys():
+            raise ValueError(f&#39;Dataframe with name {new_name} already exists. All filenames must be unique!&#39;)
+            # TODO: DRY
+            # Separate routine checks (like this one) from the main logic into decorators
+    
+        self._dataframes_dict[new_name] = self._dataframes_dict.pop(old_name)
+
+
+    def _load_sqlite(self) -&gt; None:
+        &#34;&#34;&#34;Load sqlite files from data_dir_path.&#34;&#34;&#34;
+
+        sqlite_extensions = (&#39;.db&#39;, &#39;.sqlite&#39;, &#39;.sqlite3&#39;)
+        # TODO move extensions and othe settings-like variables to config file (TOML?)
+        sqlite_files = []
+        for ext in sqlite_extensions:
+            # recursive search for sqlite files
+            os.chdir(self.data_dir_path)
+            sqlite_files += glob(f&#39;*{ext}&#39;, recursive=True)
+        sqlite_files = get_files(sqlite_files)
+        
+        for file in sqlite_files:
+
+            connection = sqlite3.connect(file)
+            
+            tables_query = &#39;&#39;&#39;
+            --sql
+            SELECT name FROM sqlite_schema
+            WHERE type =&#39;table&#39; AND name NOT LIKE &#39;sqlite_%&#39;;
+            &#39;&#39;&#39;
+
+            tables = pd.read_sql(tables_query, connection)
+            
+            for table in tables.name:
+                query = f&#39;&#39;&#39;
+                --sql
+                SELECT * FROM {table};
+                &#39;&#39;&#39;
+                if self.load_limit:
+                    query.replace(&#39;;&#39;, f&#39;\nLIMIT {self.load_limit};&#39;)
+                df = pd.read_sql(query, connection)
+                self._add_df(table, df)
+
+    
+    def _load_csv_pyspark(self, file, sep: Optional[str] = None):
+        &#34;&#34;&#34;Load single csv file with pyspark.&#34;&#34;&#34;
+
+        # set memory limit for pyspark (to avoid crashing of kernel)
+        os.environ[&#39;PYSPARK_SUBMIT_ARGS&#39;] = f&#39;--driver-memory {self.pyspark_mem_limit} pyspark-shell&#39;
+
+        spark = SparkSession.builder.getOrCreate()
+        spark.conf.set(&#39;spark.sql.execution.arrow.pyspark.enabled&#39;, &#39;true&#39;)
+        # set log level to ERROR to avoid unnecessary messages
+        # sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel)
+        spark.sparkContext.setLogLevel(&#39;ERROR&#39;)
+
+        spark_read_csv_args = {
+            &#39;inferSchema&#39;: True
+        }
+
+        if sep:
+            spark_read_csv_args[&#39;sep&#39;] = sep
+
+        if self.load_limit:
+            spark_read_csv_args[&#39;nrowsint&#39;] = self.load_limit
+
+        df = spark_read_csv(file, **spark_read_csv_args)
+        
+        return df
+
+    def _load_csv(self) -&gt; None:
+        &#34;&#34;&#34;Load csv files from data_dir_path.&#34;&#34;&#34;
+        
+        os.chdir(self.data_dir_path)
+
+        csv_files = get_files(glob(f&#39;*.csv&#39;, recursive=True))
+        tsv_files = get_files(glob(f&#39;*.tsv&#39;, recursive=True))
+
+        for file in tsv_files:
+            
+            # TODO: implement polars support
+            # TODO: doesn&#39;t check each iteration of for loop
+            file_size = os.path.getsize(file)
+            if file_size &gt; self.pandas_mem_limit and self.use_pyspark:
+                df = self._load_csv_pyspark(file, sep=&#39;\t&#39;)
+            else:
+                if self.load_limit:
+                    df = pd.read_csv(file, sep=&#39;\t&#39;, nrows=self.load_limit)
+                else:
+                    df = pd.read_csv(file, sep=&#39;\t&#39;)
+            
+            self._add_df(generate_attr(basename_no_ext(file)), df)
+
+        for file in csv_files:
+            
+            # TODO: DRY!
+            file_size = os.path.getsize(file)
+            if file_size &gt; self.pandas_mem_limit and self.use_pyspark:
+                df = self._load_csv_pyspark(file)
+            else:
+
+                try:
+                    if self.load_limit:
+                        df = pd.read_csv(file, nrows=self.load_limit, sep=None, engine=&#39;python&#39;)
+                    else:
+                        df = pd.read_csv(file, sep=None, engine=&#39;python&#39;)
+                except UnicodeDecodeError:
+                    if self.load_limit:
+                        df = pd.read_csv(file, nrows=self.load_limit, sep=None, engine=&#39;python&#39;, encoding=&#39;latin1&#39;)
+                    else:
+                        df = pd.read_csv(file, sep=None, engine=&#39;python&#39;, encoding=&#39;latin1&#39;)
+            
+            self._add_df(generate_attr(basename_no_ext(file)), df)
+
+        # TODO: automatic separator detection, files without extension
+        # TODO: provide dict with file names or extensions as keys and separators as values
+        # TODO: automatic header and index detection, multiple index levels
+
+    def _download_kaggle(self) -&gt; None:
+        &#34;&#34;&#34;Download kaggle datasets from kaggle_datasets list.&#34;&#34;&#34;
+
+        api = KaggleApi()
+        api.authenticate()
+        os.chdir(self.data_dir_path)
+
+        for dataset in self.kaggle_datasets:
+            api.dataset_download_files(dataset, path=self.data_dir_path)
+            dataset_filename = dataset.split(&#39;/&#39;)[-1] + &#39;.zip&#39;
+            dataset_path = os.path.join(self.data_dir_path, dataset_filename)
+            self.archives.append(dataset_path)
+
+    def _extract_archives(self) -&gt; None:
+        &#34;&#34;&#34;Extract archives from archives list.&#34;&#34;&#34;
+        for archive in self.archives:
+            ext = os.path.splitext(archive)[1].replace(&#39;.&#39;, &#39;&#39;)
+            if ext not in patoolib.ArchiveFormats:
+                raise ValueError(f&#39;Unsupported archive format {ext}! Supported formats: {patoolib.ArchiveFormats}&#39;)
+            patoolib.extract_archive(archive, outdir=self.data_dir_path)
+
+    def load_data(self) -&gt; None:
+        &#34;&#34;&#34;Load data from data_dir_path, kaggle_datasets and archives lists into EDA object.&#34;&#34;&#34;
+
+        if self.state.state != &#39;init&#39;:
+            raise ValueError(f&#39;Data can be loaded only in init state, not {self.state.state}!&#39;)
+
+        if not self.silent:
+            display(Markdown(&#39;# Loading data&#39;))
+        
+        self._dataframes_dict = {}
+        if self.kaggle_datasets:
+            self._download_kaggle()
+        if self.archives:
+            self._extract_archives()
+        self._load_sqlite()
+        self._load_csv()
+
+        display(Markdown(f&#39;**Loaded {len(self._dataframes_dict)} dataframes**&#39;))
+        display(Markdown(f&#39;**To add dataframes, use `add_df` method**&#39;))
+        display(Markdown(f&#39;**After data loading is completed, call `eda.next()`**&#39;))
+
+    def clean_check(self, subset: Optional[List[str]] = None) -&gt; None:
+        &#34;&#34;&#34;Check for nulls and duplicates in the dataframes.&#34;&#34;&#34;
+        
+        display(Markdown(&#39;# Check for bad values&#39;))
+
+        for name, df in self._dataframes_dict.items():
+            
+            display(Markdown(f&#39;### Nulls and datatypes in {name}&#39;))
+            display(df.info())
+
+            # calculate ratio of nulls in each column
+            nulls = (df.isnull().sum() / len(df)).to_numpy()
+            for ratio, col in zip(nulls, df.columns):
+                if ratio:
+                    col_dtype = df[col].dtype
+                    message = f&#39;**Column `{col}` ({col_dtype}) has {ratio*100:.2f}% nulls.**&#39;
+                    if ratio &gt; 0.1:
+                        message += &#39; **Consider dropping this column before calling `clean`**&#39;
+                    display(Markdown(message))
+            
+            display(Markdown(f&#39;### Duplicates in {name}&#39;))
+            duplicates_num = df.duplicated().sum()
+            if duplicates_num:
+                # show rows with some duplicates
+                duplicated_df = df[df.duplicated(keep=False)]
+                display(Markdown(f&#39;**Found {duplicates_num} duplicated rows in the following columns:**&#39;))
+                display(df[df.duplicated(keep=False)].groupby(list(df.columns)).size().reset_index().rename(columns={0:&#39;count&#39;}))
+                display(Markdown(f&#39;**Some of the duplicated rows:**&#39;))
+                display(duplicated_df.head(20))
+            else:
+                print(&#39;No duplicates found...&#39;)
+
+        display(Markdown(f&#39;**Use `clean` method to drop duplicated and containing nulls rows or perform other preprocessing procedures.**&#39;))
+        display(Markdown(f&#39;**After cleaning is completed, call `eda.next()`**&#39;))
+
+    def clean(self, nulls: bool, duplicates: bool) -&gt; None:
+        &#34;&#34;&#34;Drop rows with nulls or duplicates&#34;&#34;&#34;
+
+        # WARNING: .any() can caause errors, this method is currently deprecated
+        raise DeprecationWarning(&#34;This method is deprecated, because it can cause errors in some cases, and it&#39;s usually not a good idea just to drop the missing values.&#34;)
+
+        if self.state.state != &#39;loaded&#39;:
+            raise ValueError(f&#39;Data can be cleaned only in loaded state, not {self.state.state}!&#39;)
+
+        display(Markdown(&#39;# Cleaning data&#39;))
+
+        for name, df in self._dataframes_dict.items():
+            
+            if nulls:
+                display(Markdown(f&#39;### Drop nulls in {name}&#39;))
+                null_nums = df.isnull().sum()
+                if null_nums.any():
+                    df.dropna(inplace=True, axis=&#39;rows&#39;)
+                    print(f&#39;Dropped {null_nums.sum()} rows with nulls&#39;)
+                    print(f&#39;No subset is used by default!&#39;)
+                else:
+                    print(&#39;No nulls found...&#39;)
+
+            if duplicates:
+                display(Markdown(f&#39;### Drop duplicates in {name}&#39;))
+                duplicates_nums = df.duplicated().sum()
+                if duplicates_nums.any():
+                    df.drop_duplicates(inplace=True)
+                    print(f&#39;Dropped {duplicates_nums.sum()} duplicates&#39;)
+                    print(f&#39;No subset is used by default!&#39;)
+                else:
+                    print(&#39;No duplicates found...&#39;)
+
+    def drop_empty_columns(self, treshold: float = 0.1):
+        &#34;&#34;&#34;Drop columns with more than treshold nulls&#34;&#34;&#34;
+        for name, df in self._dataframes_dict.items():
+            display(Markdown(f&#39;### Drop empty columns in {name}&#39;))
+            nulls = df.isnull().sum() / len(df)
+            for ratio, col in zip(nulls, df.columns):
+                if ratio &gt; treshold:
+                    df.drop(col, axis=&#39;columns&#39;, inplace=True)
+                    print(f&#39;Dropped column {col} with {ratio*100:.2f}% nulls&#39;)
+
+    def categorize(self, subset: Optional[List[str]] = None) -&gt; None:
+        &#34;&#34;&#34;Categorize columns with less than CATEGORY_MAX unique values&#34;&#34;&#34;
+
+        if self.state.state != &#39;cleaned&#39;:
+            raise ValueError(f&#39;Data can be categorized only in cleaned state, not {self.state.state}!&#39;)
+        
+        display(Markdown(&#39;# Identifiying categorical features&#39;))
+
+        for name, df in self._dataframes_dict.items():
+                
+                display(Markdown(f&#39;### Categories in {name}&#39;))
+
+                already_cat_features = list(df.select_dtypes(include=&#39;category&#39;).columns)
+                cat_features = [cat_name for cat_name in df.columns if df[cat_name].nunique() &lt;= CATEGORY_MAX]
+                new_cat_features = list(set(cat_features) - set(already_cat_features))
+
+                if already_cat_features:
+                    print(f&#39;Already categorical:&#39;)
+                    display(already_cat_features)
+
+                if new_cat_features:
+                    df[cat_features] = df[cat_features].astype(&#39;category&#39;)
+                    print(&#39;Converted to categorical:&#39;)
+                    display(new_cat_features)
+                else:
+                    print(&#39;No new categorical features found...&#39;)
+
+                not_treated = list(df.select_dtypes(include=&#39;object&#39;).columns)
+                if not_treated:
+                    print(&#39;Not treated:&#39;)
+                    display(not_treated)
+
+        display(Markdown(f&#39;**You can change some categories by hands. After categorization is completed, call `eda.next()`**&#39;))
+
+    def explore_numerics(self, subset: Optional[List[str]] = None) -&gt; None:
+        &#34;&#34;&#34;Explore numeric features&#34;&#34;&#34;
+
+        if self.state.state != &#39;categorized&#39;:
+            raise ValueError(f&#39;Data can be explored only in categorized state, not {self.state.state}!&#39;)
+        
+        display(Markdown(&#39;# Exploring numeric features&#39;))
+
+        for name, df in self._dataframes_dict.items():
+            
+            display(Markdown(f&#39;### Numeric features in {name}&#39;))
+
+            num_features = list(df.select_dtypes(include=&#39;number&#39;).columns)
+            for feature in num_features:
+                kde_boxen_qq(df, feature)
+
+    def explore_categories(self, df_name: Optional[str], subset: Optional[List[str]] = None) -&gt; None:
+        &#34;&#34;&#34;Explore categorical features with countplots&#34;&#34;&#34;
+
+        if df_name is not None:
+            dfs_to_explore = {df_name: self._dataframes_dict[df_name]}
+        else:
+            dfs_to_explore = self._dataframes_dict
+
+        if subset is not None:
+
+            if not df_name:
+                raise ValueError(&#39;If subset is specified, df_name must be specified too!&#39;)
+
+            dfs_to_explore = {df_name: dfs_to_explore[df_name][subset]}
+
+
+        if self.state.state != &#39;categorized&#39;:
+            raise ValueError(f&#39;Data can be explored only in categorized state, not {self.state.state}!&#39;)
+        
+        display(Markdown(&#39;# Exploring categorical features&#39;))
+
+        for name, df in dfs_to_explore.items():
+            
+            display(Markdown(f&#39;### Categorical features in {name}&#39;))
+
+            cat_features = list(df.select_dtypes(include=&#39;category&#39;).columns)
+            for feature in cat_features:
+                
+                sns.countplot(
+                    data=df,
+                    x=feature
+                )
+
+                plt.bar_label(plt.gca().containers[0])
+                plt.title(snake_to_title(feature))
+                sns.despine()
+                plt.show()
+
+    def _select_dimension(self, df_name, col_name):
+        &#34;&#34;&#34;Select some variable from the dataframe&#34;&#34;&#34;
+
+        raise DeprecationWarning(&#39;This method is for future use!&#39;)
+
+        if df_name not in self._dataframes_dict.keys():
+            raise ValueError(f&#39;Dataframe {df_name} is not loaded&#39;)
+        if col_name not in self._dataframes_dict[df_name].columns:
+            raise ValueError(f&#39;Column {col_name} is not found in {df_name}&#39;)
+
+        return self._dataframes_dict[df_name][col_name]
+
+    def compare_distributions(self, df_name: str, num_col_name: str, cat_col_name: str, treat_nans: str = &#39;drop&#39;):
+        &#34;&#34;&#34;Compare distributions of numeric feauture by categorical feature&#34;&#34;&#34;
+
+        # TODO some decorator for checking state
+        # TODO some decorator for checking possible values of the arguments and raising errors
+
+        if self.state.state != &#39;categorized&#39;:
+            raise ValueError(f&#39;Data can be compared only in categorized state, not {self.state.state}!&#39;)
+
+        compare_df = self._dataframes_dict[df_name][[num_col_name, cat_col_name]]
+        if isinstance(compare_df, pyspark.pandas.frame.DataFrame):
+            compare_df = compare_df.to_pandas()
+
+        compare_distributions(compare_df, num_col_name, cat_col_name, treat_nans)
+    
+
+    @_check_duplicated_features
+    def get_featues_by_type(self, dtype, df_name: Optional[str] = None):
+        &#34;&#34;&#34;Get features by type&#34;&#34;&#34;
+        if df_name is None:
+            features_list = [col for df in self._dataframes_dict.values() for col in df.select_dtypes(include=dtype).columns]
+        else:
+            features_list = self._dataframes_dict[df_name].select_dtypes(include=dtype).columns.tolist()
+
+        return features_list
+
+    @property
+    def categorical_features(self, df_name: Optional[str] = None):
+        return self.get_featues_by_type(&#39;category&#39;, df_name=df_name)
+    
+    @property
+    def numeric_features(self, df_name: Optional[str] = None):
+        return self.get_featues_by_type(&#39;number&#39;, df_name=df_name)
+
+    @property
+    def not_treated_features(self, df_name: Optional[str] = None):
+        return self.get_featues_by_type(&#39;object&#39;, df_name=df_name)
+    
+    @property
+    @_check_duplicated_features
+    def all_features(self, df_name: Optional[str] = None):
+        if df_name is None:
+            features_list = [col for df in self._dataframes_dict.values() for col in df.columns]
+        else:
+            features_list = self._dataframes_dict[df_name].columns.tolist()
+
+        return features_list
+
+    @property
+    def data(self):
+        Data = namedtuple(&#39;Data&#39;, self._dataframes_dict)
+        return Data(**self._dataframes_dict)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="edawesome.eda.basename_no_ext"><code class="name flex">
+<span>def <span class="ident">basename_no_ext</span></span>(<span>path: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def basename_no_ext(path: str) -&gt; str:
+    return os.path.splitext(os.path.basename(path))[0]</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="edawesome.eda.EDA"><code class="flex name class">
+<span>class <span class="ident">EDA</span></span>
+<span>(</span><span>data_dir_path: str, kaggle_datasets: Optional[List[str]] = None, archives: Optional[List[str]] = None, silent: Optional[bool] = False, concat: Optional[bool] = False, use_polars: Optional[bool] = False, use_pyspark: Optional[bool] = False, lazy_sqlite: Optional[bool] = False, load_limit: Optional[int] = None, pandas_mem_limit: Optional[int] = 1048576, pyspark_mem_limit: Optional[str] = '4g')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main class for simple and robust EDA with pandas and seaborn.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EDA:
+    &#34;&#34;&#34;Main class for simple and robust EDA with pandas and seaborn.&#34;&#34;&#34;
+
+    data_dir_path: str
+    kaggle_datasets: Optional[List[str]] = None
+    archives: Optional[List[str]] = None
+    # List of supported archives can be found on patool github page: https://github.com/wummel/patool
+    # TODO: dictionary with csv files as keys and separator as values
+
+    state: Machine = field(init=False)
+
+    silent: Optional[bool] = False
+    concat: Optional[bool] = False
+    use_polars: Optional[bool] = False
+    use_pyspark: Optional[bool] = False
+    lazy_sqlite: Optional[bool] = False
+    
+    load_limit: Optional[int] = None
+    pandas_mem_limit: Optional[int] = 1024**2
+    pyspark_mem_limit: Optional[str] = &#39;4g&#39;
+
+    @property
+    def data_list(self) -&gt; List[pd.DataFrame]:
+        return list(self._dataframes_dict.keys())
+
+    def __post_init__(self) -&gt; None:
+
+        if self.concat or self.use_polars:
+            raise NotImplementedError
+            # self.concat will be used to concat all the loaded dataframes into one
+            # self.use_polars will be used to load data with polars instead of pandas (it is faster and uses less memory)
+
+        states = [
+            &#39;init&#39;,
+            &#39;loaded&#39;,
+            &#39;cleaned&#39;,
+            &#39;categorized&#39;
+        ]
+        self.state = Machine(states=states, initial=&#39;init&#39;)
+        self.state.add_ordered_transitions(loop=False)
+
+        if self.use_polars and self.use_pyspark:
+            raise ValueError(&#39;You can use only one of polars or pyspark! Later there will be a map funcionality.&#39;)
+        
+        if self.use_pyspark and self.load_limit:
+            raise ValueError(&#39;You can use load_limit only with pandas and polars!&#39;)
+
+        if self.pandas_mem_limit and not (self.use_polars or self.use_pyspark):
+            raise ValueError(&#39;You can use pandas_mem_limit only with pandas and polars! It is needed to define minimum number of rows to use pyspark or polars.&#39;)
+
+        if self.pyspark_mem_limit and not self.use_pyspark:
+            raise ValueError(&#39;You can use pyspark_mem_limit only with pyspark!&#39;)
+
+    def next(self) -&gt; None:
+        &#34;&#34;&#34;Change state to the next one.&#34;&#34;&#34;
+        self.state.next_state()
+        display(Markdown(f&#39;### EDA is in {self.state.state} state now&#39;))
+        if self.state.state == &#39;loaded&#39;:
+            # Separate messages into some &#34;front-end&#34; class or module
+            message = &#39;\n&#39;.join([
+                &#39;Now you can drop or impute missing values. Here are some useful methods:&#39;,
+                &#39;- `clean_check` - check number for missing values in each column&#39;,
+                &#39;- `drop_empty_columns` -  drop columns with a lot of missing values&#39;,
+                &#39;- `clean` - drop duplicates and missing values (deprecated)&#39;
+            ])
+            display(Markdown(message))
+
+    @staticmethod
+    def prettify_col_names(df: pd.DataFrame) -&gt; None:
+        &#34;&#34;&#34;Rename columns to snake case and set index if it is auto index.&#34;&#34;&#34;
+
+        # detect auto index
+        first_col = df.columns[0]
+        if first_col == &#39;Unnamed: 0&#39;:
+            df.rename(columns={first_col: &#39;index&#39;}, inplace=True)
+            first_col = &#39;index&#39;
+
+        if (df[first_col] == df.index).all():
+            df.set_index(first_col, inplace=True)
+
+        # columns to snake case
+        df.columns = df.columns.to_series().apply(generate_attr)
+
+    @staticmethod
+    def display_df(name: str, df: pd.DataFrame) -&gt; None:
+        &#34;&#34;&#34;Display dataframe with shape.&#34;&#34;&#34;
+        display_df(name, df)
+
+    def _add_df(self, name: str, df):
+        &#34;&#34;&#34;Add dataframe to the EDA object.&#34;&#34;&#34;
+
+        if self.state.state != &#39;init&#39;:
+            raise ValueError(f&#39;Dataframes can be added only in init state, not {self.state.state}!&#39;)
+
+        if hasattr(self, name):
+            raise ValueError(f&#39;Dataframe or other attribute with name {name} already exists. All filenames must be unique!&#39;)
+
+        self.prettify_col_names(df)
+        self._dataframes_dict[name] = df
+
+        if not self.silent:
+            self.display_df(name, df)
+
+    def rename_df(self, old_name: str, new_name: str) -&gt; None:
+        &#34;&#34;&#34;Rename the dataframe.&#34;&#34;&#34;
+
+        if old_name not in self._dataframes_dict.keys():
+            raise ValueError(f&#39;Dataframe with name {old_name} does not exist!&#39;)
+            
+        if new_name in self._dataframes_dict.keys():
+            raise ValueError(f&#39;Dataframe with name {new_name} already exists. All filenames must be unique!&#39;)
+            # TODO: DRY
+            # Separate routine checks (like this one) from the main logic into decorators
+    
+        self._dataframes_dict[new_name] = self._dataframes_dict.pop(old_name)
+
+
+    def _load_sqlite(self) -&gt; None:
+        &#34;&#34;&#34;Load sqlite files from data_dir_path.&#34;&#34;&#34;
+
+        sqlite_extensions = (&#39;.db&#39;, &#39;.sqlite&#39;, &#39;.sqlite3&#39;)
+        # TODO move extensions and othe settings-like variables to config file (TOML?)
+        sqlite_files = []
+        for ext in sqlite_extensions:
+            # recursive search for sqlite files
+            os.chdir(self.data_dir_path)
+            sqlite_files += glob(f&#39;*{ext}&#39;, recursive=True)
+        sqlite_files = get_files(sqlite_files)
+        
+        for file in sqlite_files:
+
+            connection = sqlite3.connect(file)
+            
+            tables_query = &#39;&#39;&#39;
+            --sql
+            SELECT name FROM sqlite_schema
+            WHERE type =&#39;table&#39; AND name NOT LIKE &#39;sqlite_%&#39;;
+            &#39;&#39;&#39;
+
+            tables = pd.read_sql(tables_query, connection)
+            
+            for table in tables.name:
+                query = f&#39;&#39;&#39;
+                --sql
+                SELECT * FROM {table};
+                &#39;&#39;&#39;
+                if self.load_limit:
+                    query.replace(&#39;;&#39;, f&#39;\nLIMIT {self.load_limit};&#39;)
+                df = pd.read_sql(query, connection)
+                self._add_df(table, df)
+
+    
+    def _load_csv_pyspark(self, file, sep: Optional[str] = None):
+        &#34;&#34;&#34;Load single csv file with pyspark.&#34;&#34;&#34;
+
+        # set memory limit for pyspark (to avoid crashing of kernel)
+        os.environ[&#39;PYSPARK_SUBMIT_ARGS&#39;] = f&#39;--driver-memory {self.pyspark_mem_limit} pyspark-shell&#39;
+
+        spark = SparkSession.builder.getOrCreate()
+        spark.conf.set(&#39;spark.sql.execution.arrow.pyspark.enabled&#39;, &#39;true&#39;)
+        # set log level to ERROR to avoid unnecessary messages
+        # sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel)
+        spark.sparkContext.setLogLevel(&#39;ERROR&#39;)
+
+        spark_read_csv_args = {
+            &#39;inferSchema&#39;: True
+        }
+
+        if sep:
+            spark_read_csv_args[&#39;sep&#39;] = sep
+
+        if self.load_limit:
+            spark_read_csv_args[&#39;nrowsint&#39;] = self.load_limit
+
+        df = spark_read_csv(file, **spark_read_csv_args)
+        
+        return df
+
+    def _load_csv(self) -&gt; None:
+        &#34;&#34;&#34;Load csv files from data_dir_path.&#34;&#34;&#34;
+        
+        os.chdir(self.data_dir_path)
+
+        csv_files = get_files(glob(f&#39;*.csv&#39;, recursive=True))
+        tsv_files = get_files(glob(f&#39;*.tsv&#39;, recursive=True))
+
+        for file in tsv_files:
+            
+            # TODO: implement polars support
+            # TODO: doesn&#39;t check each iteration of for loop
+            file_size = os.path.getsize(file)
+            if file_size &gt; self.pandas_mem_limit and self.use_pyspark:
+                df = self._load_csv_pyspark(file, sep=&#39;\t&#39;)
+            else:
+                if self.load_limit:
+                    df = pd.read_csv(file, sep=&#39;\t&#39;, nrows=self.load_limit)
+                else:
+                    df = pd.read_csv(file, sep=&#39;\t&#39;)
+            
+            self._add_df(generate_attr(basename_no_ext(file)), df)
+
+        for file in csv_files:
+            
+            # TODO: DRY!
+            file_size = os.path.getsize(file)
+            if file_size &gt; self.pandas_mem_limit and self.use_pyspark:
+                df = self._load_csv_pyspark(file)
+            else:
+
+                try:
+                    if self.load_limit:
+                        df = pd.read_csv(file, nrows=self.load_limit, sep=None, engine=&#39;python&#39;)
+                    else:
+                        df = pd.read_csv(file, sep=None, engine=&#39;python&#39;)
+                except UnicodeDecodeError:
+                    if self.load_limit:
+                        df = pd.read_csv(file, nrows=self.load_limit, sep=None, engine=&#39;python&#39;, encoding=&#39;latin1&#39;)
+                    else:
+                        df = pd.read_csv(file, sep=None, engine=&#39;python&#39;, encoding=&#39;latin1&#39;)
+            
+            self._add_df(generate_attr(basename_no_ext(file)), df)
+
+        # TODO: automatic separator detection, files without extension
+        # TODO: provide dict with file names or extensions as keys and separators as values
+        # TODO: automatic header and index detection, multiple index levels
+
+    def _download_kaggle(self) -&gt; None:
+        &#34;&#34;&#34;Download kaggle datasets from kaggle_datasets list.&#34;&#34;&#34;
+
+        api = KaggleApi()
+        api.authenticate()
+        os.chdir(self.data_dir_path)
+
+        for dataset in self.kaggle_datasets:
+            api.dataset_download_files(dataset, path=self.data_dir_path)
+            dataset_filename = dataset.split(&#39;/&#39;)[-1] + &#39;.zip&#39;
+            dataset_path = os.path.join(self.data_dir_path, dataset_filename)
+            self.archives.append(dataset_path)
+
+    def _extract_archives(self) -&gt; None:
+        &#34;&#34;&#34;Extract archives from archives list.&#34;&#34;&#34;
+        for archive in self.archives:
+            ext = os.path.splitext(archive)[1].replace(&#39;.&#39;, &#39;&#39;)
+            if ext not in patoolib.ArchiveFormats:
+                raise ValueError(f&#39;Unsupported archive format {ext}! Supported formats: {patoolib.ArchiveFormats}&#39;)
+            patoolib.extract_archive(archive, outdir=self.data_dir_path)
+
+    def load_data(self) -&gt; None:
+        &#34;&#34;&#34;Load data from data_dir_path, kaggle_datasets and archives lists into EDA object.&#34;&#34;&#34;
+
+        if self.state.state != &#39;init&#39;:
+            raise ValueError(f&#39;Data can be loaded only in init state, not {self.state.state}!&#39;)
+
+        if not self.silent:
+            display(Markdown(&#39;# Loading data&#39;))
+        
+        self._dataframes_dict = {}
+        if self.kaggle_datasets:
+            self._download_kaggle()
+        if self.archives:
+            self._extract_archives()
+        self._load_sqlite()
+        self._load_csv()
+
+        display(Markdown(f&#39;**Loaded {len(self._dataframes_dict)} dataframes**&#39;))
+        display(Markdown(f&#39;**To add dataframes, use `add_df` method**&#39;))
+        display(Markdown(f&#39;**After data loading is completed, call `eda.next()`**&#39;))
+
+    def clean_check(self, subset: Optional[List[str]] = None) -&gt; None:
+        &#34;&#34;&#34;Check for nulls and duplicates in the dataframes.&#34;&#34;&#34;
+        
+        display(Markdown(&#39;# Check for bad values&#39;))
+
+        for name, df in self._dataframes_dict.items():
+            
+            display(Markdown(f&#39;### Nulls and datatypes in {name}&#39;))
+            display(df.info())
+
+            # calculate ratio of nulls in each column
+            nulls = (df.isnull().sum() / len(df)).to_numpy()
+            for ratio, col in zip(nulls, df.columns):
+                if ratio:
+                    col_dtype = df[col].dtype
+                    message = f&#39;**Column `{col}` ({col_dtype}) has {ratio*100:.2f}% nulls.**&#39;
+                    if ratio &gt; 0.1:
+                        message += &#39; **Consider dropping this column before calling `clean`**&#39;
+                    display(Markdown(message))
+            
+            display(Markdown(f&#39;### Duplicates in {name}&#39;))
+            duplicates_num = df.duplicated().sum()
+            if duplicates_num:
+                # show rows with some duplicates
+                duplicated_df = df[df.duplicated(keep=False)]
+                display(Markdown(f&#39;**Found {duplicates_num} duplicated rows in the following columns:**&#39;))
+                display(df[df.duplicated(keep=False)].groupby(list(df.columns)).size().reset_index().rename(columns={0:&#39;count&#39;}))
+                display(Markdown(f&#39;**Some of the duplicated rows:**&#39;))
+                display(duplicated_df.head(20))
+            else:
+                print(&#39;No duplicates found...&#39;)
+
+        display(Markdown(f&#39;**Use `clean` method to drop duplicated and containing nulls rows or perform other preprocessing procedures.**&#39;))
+        display(Markdown(f&#39;**After cleaning is completed, call `eda.next()`**&#39;))
+
+    def clean(self, nulls: bool, duplicates: bool) -&gt; None:
+        &#34;&#34;&#34;Drop rows with nulls or duplicates&#34;&#34;&#34;
+
+        # WARNING: .any() can caause errors, this method is currently deprecated
+        raise DeprecationWarning(&#34;This method is deprecated, because it can cause errors in some cases, and it&#39;s usually not a good idea just to drop the missing values.&#34;)
+
+        if self.state.state != &#39;loaded&#39;:
+            raise ValueError(f&#39;Data can be cleaned only in loaded state, not {self.state.state}!&#39;)
+
+        display(Markdown(&#39;# Cleaning data&#39;))
+
+        for name, df in self._dataframes_dict.items():
+            
+            if nulls:
+                display(Markdown(f&#39;### Drop nulls in {name}&#39;))
+                null_nums = df.isnull().sum()
+                if null_nums.any():
+                    df.dropna(inplace=True, axis=&#39;rows&#39;)
+                    print(f&#39;Dropped {null_nums.sum()} rows with nulls&#39;)
+                    print(f&#39;No subset is used by default!&#39;)
+                else:
+                    print(&#39;No nulls found...&#39;)
+
+            if duplicates:
+                display(Markdown(f&#39;### Drop duplicates in {name}&#39;))
+                duplicates_nums = df.duplicated().sum()
+                if duplicates_nums.any():
+                    df.drop_duplicates(inplace=True)
+                    print(f&#39;Dropped {duplicates_nums.sum()} duplicates&#39;)
+                    print(f&#39;No subset is used by default!&#39;)
+                else:
+                    print(&#39;No duplicates found...&#39;)
+
+    def drop_empty_columns(self, treshold: float = 0.1):
+        &#34;&#34;&#34;Drop columns with more than treshold nulls&#34;&#34;&#34;
+        for name, df in self._dataframes_dict.items():
+            display(Markdown(f&#39;### Drop empty columns in {name}&#39;))
+            nulls = df.isnull().sum() / len(df)
+            for ratio, col in zip(nulls, df.columns):
+                if ratio &gt; treshold:
+                    df.drop(col, axis=&#39;columns&#39;, inplace=True)
+                    print(f&#39;Dropped column {col} with {ratio*100:.2f}% nulls&#39;)
+
+    def categorize(self, subset: Optional[List[str]] = None) -&gt; None:
+        &#34;&#34;&#34;Categorize columns with less than CATEGORY_MAX unique values&#34;&#34;&#34;
+
+        if self.state.state != &#39;cleaned&#39;:
+            raise ValueError(f&#39;Data can be categorized only in cleaned state, not {self.state.state}!&#39;)
+        
+        display(Markdown(&#39;# Identifiying categorical features&#39;))
+
+        for name, df in self._dataframes_dict.items():
+                
+                display(Markdown(f&#39;### Categories in {name}&#39;))
+
+                already_cat_features = list(df.select_dtypes(include=&#39;category&#39;).columns)
+                cat_features = [cat_name for cat_name in df.columns if df[cat_name].nunique() &lt;= CATEGORY_MAX]
+                new_cat_features = list(set(cat_features) - set(already_cat_features))
+
+                if already_cat_features:
+                    print(f&#39;Already categorical:&#39;)
+                    display(already_cat_features)
+
+                if new_cat_features:
+                    df[cat_features] = df[cat_features].astype(&#39;category&#39;)
+                    print(&#39;Converted to categorical:&#39;)
+                    display(new_cat_features)
+                else:
+                    print(&#39;No new categorical features found...&#39;)
+
+                not_treated = list(df.select_dtypes(include=&#39;object&#39;).columns)
+                if not_treated:
+                    print(&#39;Not treated:&#39;)
+                    display(not_treated)
+
+        display(Markdown(f&#39;**You can change some categories by hands. After categorization is completed, call `eda.next()`**&#39;))
+
+    def explore_numerics(self, subset: Optional[List[str]] = None) -&gt; None:
+        &#34;&#34;&#34;Explore numeric features&#34;&#34;&#34;
+
+        if self.state.state != &#39;categorized&#39;:
+            raise ValueError(f&#39;Data can be explored only in categorized state, not {self.state.state}!&#39;)
+        
+        display(Markdown(&#39;# Exploring numeric features&#39;))
+
+        for name, df in self._dataframes_dict.items():
+            
+            display(Markdown(f&#39;### Numeric features in {name}&#39;))
+
+            num_features = list(df.select_dtypes(include=&#39;number&#39;).columns)
+            for feature in num_features:
+                kde_boxen_qq(df, feature)
+
+    def explore_categories(self, df_name: Optional[str], subset: Optional[List[str]] = None) -&gt; None:
+        &#34;&#34;&#34;Explore categorical features with countplots&#34;&#34;&#34;
+
+        if df_name is not None:
+            dfs_to_explore = {df_name: self._dataframes_dict[df_name]}
+        else:
+            dfs_to_explore = self._dataframes_dict
+
+        if subset is not None:
+
+            if not df_name:
+                raise ValueError(&#39;If subset is specified, df_name must be specified too!&#39;)
+
+            dfs_to_explore = {df_name: dfs_to_explore[df_name][subset]}
+
+
+        if self.state.state != &#39;categorized&#39;:
+            raise ValueError(f&#39;Data can be explored only in categorized state, not {self.state.state}!&#39;)
+        
+        display(Markdown(&#39;# Exploring categorical features&#39;))
+
+        for name, df in dfs_to_explore.items():
+            
+            display(Markdown(f&#39;### Categorical features in {name}&#39;))
+
+            cat_features = list(df.select_dtypes(include=&#39;category&#39;).columns)
+            for feature in cat_features:
+                
+                sns.countplot(
+                    data=df,
+                    x=feature
+                )
+
+                plt.bar_label(plt.gca().containers[0])
+                plt.title(snake_to_title(feature))
+                sns.despine()
+                plt.show()
+
+    def _select_dimension(self, df_name, col_name):
+        &#34;&#34;&#34;Select some variable from the dataframe&#34;&#34;&#34;
+
+        raise DeprecationWarning(&#39;This method is for future use!&#39;)
+
+        if df_name not in self._dataframes_dict.keys():
+            raise ValueError(f&#39;Dataframe {df_name} is not loaded&#39;)
+        if col_name not in self._dataframes_dict[df_name].columns:
+            raise ValueError(f&#39;Column {col_name} is not found in {df_name}&#39;)
+
+        return self._dataframes_dict[df_name][col_name]
+
+    def compare_distributions(self, df_name: str, num_col_name: str, cat_col_name: str, treat_nans: str = &#39;drop&#39;):
+        &#34;&#34;&#34;Compare distributions of numeric feauture by categorical feature&#34;&#34;&#34;
+
+        # TODO some decorator for checking state
+        # TODO some decorator for checking possible values of the arguments and raising errors
+
+        if self.state.state != &#39;categorized&#39;:
+            raise ValueError(f&#39;Data can be compared only in categorized state, not {self.state.state}!&#39;)
+
+        compare_df = self._dataframes_dict[df_name][[num_col_name, cat_col_name]]
+        if isinstance(compare_df, pyspark.pandas.frame.DataFrame):
+            compare_df = compare_df.to_pandas()
+
+        compare_distributions(compare_df, num_col_name, cat_col_name, treat_nans)
+    
+
+    @_check_duplicated_features
+    def get_featues_by_type(self, dtype, df_name: Optional[str] = None):
+        &#34;&#34;&#34;Get features by type&#34;&#34;&#34;
+        if df_name is None:
+            features_list = [col for df in self._dataframes_dict.values() for col in df.select_dtypes(include=dtype).columns]
+        else:
+            features_list = self._dataframes_dict[df_name].select_dtypes(include=dtype).columns.tolist()
+
+        return features_list
+
+    @property
+    def categorical_features(self, df_name: Optional[str] = None):
+        return self.get_featues_by_type(&#39;category&#39;, df_name=df_name)
+    
+    @property
+    def numeric_features(self, df_name: Optional[str] = None):
+        return self.get_featues_by_type(&#39;number&#39;, df_name=df_name)
+
+    @property
+    def not_treated_features(self, df_name: Optional[str] = None):
+        return self.get_featues_by_type(&#39;object&#39;, df_name=df_name)
+    
+    @property
+    @_check_duplicated_features
+    def all_features(self, df_name: Optional[str] = None):
+        if df_name is None:
+            features_list = [col for df in self._dataframes_dict.values() for col in df.columns]
+        else:
+            features_list = self._dataframes_dict[df_name].columns.tolist()
+
+        return features_list
+
+    @property
+    def data(self):
+        Data = namedtuple(&#39;Data&#39;, self._dataframes_dict)
+        return Data(**self._dataframes_dict)</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="edawesome.eda.EDA.archives"><code class="name">var <span class="ident">archives</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.concat"><code class="name">var <span class="ident">concat</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.data_dir_path"><code class="name">var <span class="ident">data_dir_path</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.kaggle_datasets"><code class="name">var <span class="ident">kaggle_datasets</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.lazy_sqlite"><code class="name">var <span class="ident">lazy_sqlite</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.load_limit"><code class="name">var <span class="ident">load_limit</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.pandas_mem_limit"><code class="name">var <span class="ident">pandas_mem_limit</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.pyspark_mem_limit"><code class="name">var <span class="ident">pyspark_mem_limit</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.silent"><code class="name">var <span class="ident">silent</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.state"><code class="name">var <span class="ident">state</span> : transitions.core.Machine</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.use_polars"><code class="name">var <span class="ident">use_polars</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="edawesome.eda.EDA.use_pyspark"><code class="name">var <span class="ident">use_pyspark</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="edawesome.eda.EDA.display_df"><code class="name flex">
+<span>def <span class="ident">display_df</span></span>(<span>name: str, df: pandas.core.frame.DataFrame) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Display dataframe with shape.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def display_df(name: str, df: pd.DataFrame) -&gt; None:
+    &#34;&#34;&#34;Display dataframe with shape.&#34;&#34;&#34;
+    display_df(name, df)</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.prettify_col_names"><code class="name flex">
+<span>def <span class="ident">prettify_col_names</span></span>(<span>df: pandas.core.frame.DataFrame) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rename columns to snake case and set index if it is auto index.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def prettify_col_names(df: pd.DataFrame) -&gt; None:
+    &#34;&#34;&#34;Rename columns to snake case and set index if it is auto index.&#34;&#34;&#34;
+
+    # detect auto index
+    first_col = df.columns[0]
+    if first_col == &#39;Unnamed: 0&#39;:
+        df.rename(columns={first_col: &#39;index&#39;}, inplace=True)
+        first_col = &#39;index&#39;
+
+    if (df[first_col] == df.index).all():
+        df.set_index(first_col, inplace=True)
+
+    # columns to snake case
+    df.columns = df.columns.to_series().apply(generate_attr)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="edawesome.eda.EDA.all_features"><code class="name">var <span class="ident">all_features</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+@_check_duplicated_features
+def all_features(self, df_name: Optional[str] = None):
+    if df_name is None:
+        features_list = [col for df in self._dataframes_dict.values() for col in df.columns]
+    else:
+        features_list = self._dataframes_dict[df_name].columns.tolist()
+
+    return features_list</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.categorical_features"><code class="name">var <span class="ident">categorical_features</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def categorical_features(self, df_name: Optional[str] = None):
+    return self.get_featues_by_type(&#39;category&#39;, df_name=df_name)</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.data"><code class="name">var <span class="ident">data</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def data(self):
+    Data = namedtuple(&#39;Data&#39;, self._dataframes_dict)
+    return Data(**self._dataframes_dict)</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.data_list"><code class="name">var <span class="ident">data_list</span> : List[pandas.core.frame.DataFrame]</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def data_list(self) -&gt; List[pd.DataFrame]:
+    return list(self._dataframes_dict.keys())</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.not_treated_features"><code class="name">var <span class="ident">not_treated_features</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def not_treated_features(self, df_name: Optional[str] = None):
+    return self.get_featues_by_type(&#39;object&#39;, df_name=df_name)</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.numeric_features"><code class="name">var <span class="ident">numeric_features</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def numeric_features(self, df_name: Optional[str] = None):
+    return self.get_featues_by_type(&#39;number&#39;, df_name=df_name)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="edawesome.eda.EDA.categorize"><code class="name flex">
+<span>def <span class="ident">categorize</span></span>(<span>self, subset: Optional[List[str]] = None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Categorize columns with less than CATEGORY_MAX unique values</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def categorize(self, subset: Optional[List[str]] = None) -&gt; None:
+    &#34;&#34;&#34;Categorize columns with less than CATEGORY_MAX unique values&#34;&#34;&#34;
+
+    if self.state.state != &#39;cleaned&#39;:
+        raise ValueError(f&#39;Data can be categorized only in cleaned state, not {self.state.state}!&#39;)
+    
+    display(Markdown(&#39;# Identifiying categorical features&#39;))
+
+    for name, df in self._dataframes_dict.items():
+            
+            display(Markdown(f&#39;### Categories in {name}&#39;))
+
+            already_cat_features = list(df.select_dtypes(include=&#39;category&#39;).columns)
+            cat_features = [cat_name for cat_name in df.columns if df[cat_name].nunique() &lt;= CATEGORY_MAX]
+            new_cat_features = list(set(cat_features) - set(already_cat_features))
+
+            if already_cat_features:
+                print(f&#39;Already categorical:&#39;)
+                display(already_cat_features)
+
+            if new_cat_features:
+                df[cat_features] = df[cat_features].astype(&#39;category&#39;)
+                print(&#39;Converted to categorical:&#39;)
+                display(new_cat_features)
+            else:
+                print(&#39;No new categorical features found...&#39;)
+
+            not_treated = list(df.select_dtypes(include=&#39;object&#39;).columns)
+            if not_treated:
+                print(&#39;Not treated:&#39;)
+                display(not_treated)
+
+    display(Markdown(f&#39;**You can change some categories by hands. After categorization is completed, call `eda.next()`**&#39;))</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.clean"><code class="name flex">
+<span>def <span class="ident">clean</span></span>(<span>self, nulls: bool, duplicates: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Drop rows with nulls or duplicates</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clean(self, nulls: bool, duplicates: bool) -&gt; None:
+    &#34;&#34;&#34;Drop rows with nulls or duplicates&#34;&#34;&#34;
+
+    # WARNING: .any() can caause errors, this method is currently deprecated
+    raise DeprecationWarning(&#34;This method is deprecated, because it can cause errors in some cases, and it&#39;s usually not a good idea just to drop the missing values.&#34;)
+
+    if self.state.state != &#39;loaded&#39;:
+        raise ValueError(f&#39;Data can be cleaned only in loaded state, not {self.state.state}!&#39;)
+
+    display(Markdown(&#39;# Cleaning data&#39;))
+
+    for name, df in self._dataframes_dict.items():
+        
+        if nulls:
+            display(Markdown(f&#39;### Drop nulls in {name}&#39;))
+            null_nums = df.isnull().sum()
+            if null_nums.any():
+                df.dropna(inplace=True, axis=&#39;rows&#39;)
+                print(f&#39;Dropped {null_nums.sum()} rows with nulls&#39;)
+                print(f&#39;No subset is used by default!&#39;)
+            else:
+                print(&#39;No nulls found...&#39;)
+
+        if duplicates:
+            display(Markdown(f&#39;### Drop duplicates in {name}&#39;))
+            duplicates_nums = df.duplicated().sum()
+            if duplicates_nums.any():
+                df.drop_duplicates(inplace=True)
+                print(f&#39;Dropped {duplicates_nums.sum()} duplicates&#39;)
+                print(f&#39;No subset is used by default!&#39;)
+            else:
+                print(&#39;No duplicates found...&#39;)</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.clean_check"><code class="name flex">
+<span>def <span class="ident">clean_check</span></span>(<span>self, subset: Optional[List[str]] = None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check for nulls and duplicates in the dataframes.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clean_check(self, subset: Optional[List[str]] = None) -&gt; None:
+    &#34;&#34;&#34;Check for nulls and duplicates in the dataframes.&#34;&#34;&#34;
+    
+    display(Markdown(&#39;# Check for bad values&#39;))
+
+    for name, df in self._dataframes_dict.items():
+        
+        display(Markdown(f&#39;### Nulls and datatypes in {name}&#39;))
+        display(df.info())
+
+        # calculate ratio of nulls in each column
+        nulls = (df.isnull().sum() / len(df)).to_numpy()
+        for ratio, col in zip(nulls, df.columns):
+            if ratio:
+                col_dtype = df[col].dtype
+                message = f&#39;**Column `{col}` ({col_dtype}) has {ratio*100:.2f}% nulls.**&#39;
+                if ratio &gt; 0.1:
+                    message += &#39; **Consider dropping this column before calling `clean`**&#39;
+                display(Markdown(message))
+        
+        display(Markdown(f&#39;### Duplicates in {name}&#39;))
+        duplicates_num = df.duplicated().sum()
+        if duplicates_num:
+            # show rows with some duplicates
+            duplicated_df = df[df.duplicated(keep=False)]
+            display(Markdown(f&#39;**Found {duplicates_num} duplicated rows in the following columns:**&#39;))
+            display(df[df.duplicated(keep=False)].groupby(list(df.columns)).size().reset_index().rename(columns={0:&#39;count&#39;}))
+            display(Markdown(f&#39;**Some of the duplicated rows:**&#39;))
+            display(duplicated_df.head(20))
+        else:
+            print(&#39;No duplicates found...&#39;)
+
+    display(Markdown(f&#39;**Use `clean` method to drop duplicated and containing nulls rows or perform other preprocessing procedures.**&#39;))
+    display(Markdown(f&#39;**After cleaning is completed, call `eda.next()`**&#39;))</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.compare_distributions"><code class="name flex">
+<span>def <span class="ident">compare_distributions</span></span>(<span>self, df_name: str, num_col_name: str, cat_col_name: str, treat_nans: str = 'drop')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compare distributions of numeric feauture by categorical feature</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_distributions(self, df_name: str, num_col_name: str, cat_col_name: str, treat_nans: str = &#39;drop&#39;):
+    &#34;&#34;&#34;Compare distributions of numeric feauture by categorical feature&#34;&#34;&#34;
+
+    # TODO some decorator for checking state
+    # TODO some decorator for checking possible values of the arguments and raising errors
+
+    if self.state.state != &#39;categorized&#39;:
+        raise ValueError(f&#39;Data can be compared only in categorized state, not {self.state.state}!&#39;)
+
+    compare_df = self._dataframes_dict[df_name][[num_col_name, cat_col_name]]
+    if isinstance(compare_df, pyspark.pandas.frame.DataFrame):
+        compare_df = compare_df.to_pandas()
+
+    compare_distributions(compare_df, num_col_name, cat_col_name, treat_nans)</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.drop_empty_columns"><code class="name flex">
+<span>def <span class="ident">drop_empty_columns</span></span>(<span>self, treshold: float = 0.1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Drop columns with more than treshold nulls</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def drop_empty_columns(self, treshold: float = 0.1):
+    &#34;&#34;&#34;Drop columns with more than treshold nulls&#34;&#34;&#34;
+    for name, df in self._dataframes_dict.items():
+        display(Markdown(f&#39;### Drop empty columns in {name}&#39;))
+        nulls = df.isnull().sum() / len(df)
+        for ratio, col in zip(nulls, df.columns):
+            if ratio &gt; treshold:
+                df.drop(col, axis=&#39;columns&#39;, inplace=True)
+                print(f&#39;Dropped column {col} with {ratio*100:.2f}% nulls&#39;)</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.explore_categories"><code class="name flex">
+<span>def <span class="ident">explore_categories</span></span>(<span>self, df_name: Optional[str], subset: Optional[List[str]] = None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Explore categorical features with countplots</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def explore_categories(self, df_name: Optional[str], subset: Optional[List[str]] = None) -&gt; None:
+    &#34;&#34;&#34;Explore categorical features with countplots&#34;&#34;&#34;
+
+    if df_name is not None:
+        dfs_to_explore = {df_name: self._dataframes_dict[df_name]}
+    else:
+        dfs_to_explore = self._dataframes_dict
+
+    if subset is not None:
+
+        if not df_name:
+            raise ValueError(&#39;If subset is specified, df_name must be specified too!&#39;)
+
+        dfs_to_explore = {df_name: dfs_to_explore[df_name][subset]}
+
+
+    if self.state.state != &#39;categorized&#39;:
+        raise ValueError(f&#39;Data can be explored only in categorized state, not {self.state.state}!&#39;)
+    
+    display(Markdown(&#39;# Exploring categorical features&#39;))
+
+    for name, df in dfs_to_explore.items():
+        
+        display(Markdown(f&#39;### Categorical features in {name}&#39;))
+
+        cat_features = list(df.select_dtypes(include=&#39;category&#39;).columns)
+        for feature in cat_features:
+            
+            sns.countplot(
+                data=df,
+                x=feature
+            )
+
+            plt.bar_label(plt.gca().containers[0])
+            plt.title(snake_to_title(feature))
+            sns.despine()
+            plt.show()</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.explore_numerics"><code class="name flex">
+<span>def <span class="ident">explore_numerics</span></span>(<span>self, subset: Optional[List[str]] = None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Explore numeric features</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def explore_numerics(self, subset: Optional[List[str]] = None) -&gt; None:
+    &#34;&#34;&#34;Explore numeric features&#34;&#34;&#34;
+
+    if self.state.state != &#39;categorized&#39;:
+        raise ValueError(f&#39;Data can be explored only in categorized state, not {self.state.state}!&#39;)
+    
+    display(Markdown(&#39;# Exploring numeric features&#39;))
+
+    for name, df in self._dataframes_dict.items():
+        
+        display(Markdown(f&#39;### Numeric features in {name}&#39;))
+
+        num_features = list(df.select_dtypes(include=&#39;number&#39;).columns)
+        for feature in num_features:
+            kde_boxen_qq(df, feature)</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.get_featues_by_type"><code class="name flex">
+<span>def <span class="ident">get_featues_by_type</span></span>(<span>self, dtype, df_name: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get features by type</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@_check_duplicated_features
+def get_featues_by_type(self, dtype, df_name: Optional[str] = None):
+    &#34;&#34;&#34;Get features by type&#34;&#34;&#34;
+    if df_name is None:
+        features_list = [col for df in self._dataframes_dict.values() for col in df.select_dtypes(include=dtype).columns]
+    else:
+        features_list = self._dataframes_dict[df_name].select_dtypes(include=dtype).columns.tolist()
+
+    return features_list</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.load_data"><code class="name flex">
+<span>def <span class="ident">load_data</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load data from data_dir_path, kaggle_datasets and archives lists into EDA object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data(self) -&gt; None:
+    &#34;&#34;&#34;Load data from data_dir_path, kaggle_datasets and archives lists into EDA object.&#34;&#34;&#34;
+
+    if self.state.state != &#39;init&#39;:
+        raise ValueError(f&#39;Data can be loaded only in init state, not {self.state.state}!&#39;)
+
+    if not self.silent:
+        display(Markdown(&#39;# Loading data&#39;))
+    
+    self._dataframes_dict = {}
+    if self.kaggle_datasets:
+        self._download_kaggle()
+    if self.archives:
+        self._extract_archives()
+    self._load_sqlite()
+    self._load_csv()
+
+    display(Markdown(f&#39;**Loaded {len(self._dataframes_dict)} dataframes**&#39;))
+    display(Markdown(f&#39;**To add dataframes, use `add_df` method**&#39;))
+    display(Markdown(f&#39;**After data loading is completed, call `eda.next()`**&#39;))</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.next"><code class="name flex">
+<span>def <span class="ident">next</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Change state to the next one.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def next(self) -&gt; None:
+    &#34;&#34;&#34;Change state to the next one.&#34;&#34;&#34;
+    self.state.next_state()
+    display(Markdown(f&#39;### EDA is in {self.state.state} state now&#39;))
+    if self.state.state == &#39;loaded&#39;:
+        # Separate messages into some &#34;front-end&#34; class or module
+        message = &#39;\n&#39;.join([
+            &#39;Now you can drop or impute missing values. Here are some useful methods:&#39;,
+            &#39;- `clean_check` - check number for missing values in each column&#39;,
+            &#39;- `drop_empty_columns` -  drop columns with a lot of missing values&#39;,
+            &#39;- `clean` - drop duplicates and missing values (deprecated)&#39;
+        ])
+        display(Markdown(message))</code></pre>
+</details>
+</dd>
+<dt id="edawesome.eda.EDA.rename_df"><code class="name flex">
+<span>def <span class="ident">rename_df</span></span>(<span>self, old_name: str, new_name: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rename the dataframe.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rename_df(self, old_name: str, new_name: str) -&gt; None:
+    &#34;&#34;&#34;Rename the dataframe.&#34;&#34;&#34;
+
+    if old_name not in self._dataframes_dict.keys():
+        raise ValueError(f&#39;Dataframe with name {old_name} does not exist!&#39;)
+        
+    if new_name in self._dataframes_dict.keys():
+        raise ValueError(f&#39;Dataframe with name {new_name} already exists. All filenames must be unique!&#39;)
+        # TODO: DRY
+        # Separate routine checks (like this one) from the main logic into decorators
+
+    self._dataframes_dict[new_name] = self._dataframes_dict.pop(old_name)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="edawesome" href="index.html">edawesome</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="edawesome.eda.basename_no_ext" href="#edawesome.eda.basename_no_ext">basename_no_ext</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="edawesome.eda.EDA" href="#edawesome.eda.EDA">EDA</a></code></h4>
+<ul class="">
+<li><code><a title="edawesome.eda.EDA.all_features" href="#edawesome.eda.EDA.all_features">all_features</a></code></li>
+<li><code><a title="edawesome.eda.EDA.archives" href="#edawesome.eda.EDA.archives">archives</a></code></li>
+<li><code><a title="edawesome.eda.EDA.categorical_features" href="#edawesome.eda.EDA.categorical_features">categorical_features</a></code></li>
+<li><code><a title="edawesome.eda.EDA.categorize" href="#edawesome.eda.EDA.categorize">categorize</a></code></li>
+<li><code><a title="edawesome.eda.EDA.clean" href="#edawesome.eda.EDA.clean">clean</a></code></li>
+<li><code><a title="edawesome.eda.EDA.clean_check" href="#edawesome.eda.EDA.clean_check">clean_check</a></code></li>
+<li><code><a title="edawesome.eda.EDA.compare_distributions" href="#edawesome.eda.EDA.compare_distributions">compare_distributions</a></code></li>
+<li><code><a title="edawesome.eda.EDA.concat" href="#edawesome.eda.EDA.concat">concat</a></code></li>
+<li><code><a title="edawesome.eda.EDA.data" href="#edawesome.eda.EDA.data">data</a></code></li>
+<li><code><a title="edawesome.eda.EDA.data_dir_path" href="#edawesome.eda.EDA.data_dir_path">data_dir_path</a></code></li>
+<li><code><a title="edawesome.eda.EDA.data_list" href="#edawesome.eda.EDA.data_list">data_list</a></code></li>
+<li><code><a title="edawesome.eda.EDA.display_df" href="#edawesome.eda.EDA.display_df">display_df</a></code></li>
+<li><code><a title="edawesome.eda.EDA.drop_empty_columns" href="#edawesome.eda.EDA.drop_empty_columns">drop_empty_columns</a></code></li>
+<li><code><a title="edawesome.eda.EDA.explore_categories" href="#edawesome.eda.EDA.explore_categories">explore_categories</a></code></li>
+<li><code><a title="edawesome.eda.EDA.explore_numerics" href="#edawesome.eda.EDA.explore_numerics">explore_numerics</a></code></li>
+<li><code><a title="edawesome.eda.EDA.get_featues_by_type" href="#edawesome.eda.EDA.get_featues_by_type">get_featues_by_type</a></code></li>
+<li><code><a title="edawesome.eda.EDA.kaggle_datasets" href="#edawesome.eda.EDA.kaggle_datasets">kaggle_datasets</a></code></li>
+<li><code><a title="edawesome.eda.EDA.lazy_sqlite" href="#edawesome.eda.EDA.lazy_sqlite">lazy_sqlite</a></code></li>
+<li><code><a title="edawesome.eda.EDA.load_data" href="#edawesome.eda.EDA.load_data">load_data</a></code></li>
+<li><code><a title="edawesome.eda.EDA.load_limit" href="#edawesome.eda.EDA.load_limit">load_limit</a></code></li>
+<li><code><a title="edawesome.eda.EDA.next" href="#edawesome.eda.EDA.next">next</a></code></li>
+<li><code><a title="edawesome.eda.EDA.not_treated_features" href="#edawesome.eda.EDA.not_treated_features">not_treated_features</a></code></li>
+<li><code><a title="edawesome.eda.EDA.numeric_features" href="#edawesome.eda.EDA.numeric_features">numeric_features</a></code></li>
+<li><code><a title="edawesome.eda.EDA.pandas_mem_limit" href="#edawesome.eda.EDA.pandas_mem_limit">pandas_mem_limit</a></code></li>
+<li><code><a title="edawesome.eda.EDA.prettify_col_names" href="#edawesome.eda.EDA.prettify_col_names">prettify_col_names</a></code></li>
+<li><code><a title="edawesome.eda.EDA.pyspark_mem_limit" href="#edawesome.eda.EDA.pyspark_mem_limit">pyspark_mem_limit</a></code></li>
+<li><code><a title="edawesome.eda.EDA.rename_df" href="#edawesome.eda.EDA.rename_df">rename_df</a></code></li>
+<li><code><a title="edawesome.eda.EDA.silent" href="#edawesome.eda.EDA.silent">silent</a></code></li>
+<li><code><a title="edawesome.eda.EDA.state" href="#edawesome.eda.EDA.state">state</a></code></li>
+<li><code><a title="edawesome.eda.EDA.use_polars" href="#edawesome.eda.EDA.use_polars">use_polars</a></code></li>
+<li><code><a title="edawesome.eda.EDA.use_pyspark" href="#edawesome.eda.EDA.use_pyspark">use_pyspark</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
