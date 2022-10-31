@@ -1,4 +1,6 @@
+from turtle import color
 import pandas as pd
+import numpy as np
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -43,4 +45,17 @@ def kde_boxen_qq(
         fig.set_figheight(y)
 
     sns.despine()
+    plt.show()
+
+#TODO: typing
+def corr_heatmap(df: pd.DataFrame, variables=None):
+    
+    if variables is None:
+        variables = df.columns
+
+    corr_map = df[variables].corr(numeric_only=True)
+    # Zeros instead of diagonal
+    corr_map.values[tuple([np.arange(corr_map.shape[0])]) * 2] = np.nan
+
+    sns.heatmap(corr_map, cmap='coolwarm', annot=True, vmin=-1, vmax=1)
     plt.show()

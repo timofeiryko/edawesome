@@ -4,3 +4,5 @@ SUPPORTED_INPUT_FORMATS = (
 )
 
 # TODO att other formats (like in pd) and test it
+
+CATEGORY_MAX = 5
