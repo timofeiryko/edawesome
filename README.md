@@ -79,7 +79,9 @@ eda.compare_distributions('application_train', 'ext_source_3', 'target')
 
 ### Real-world example
 
-**Full notebook which was used for examples above can be found in one of my real ML projects.**
+Full notebook which was used for examples above can be found in one of my real ML projects.
+
+There is also an example `quickstart.ipynb` notebook in this repo.
 
 ### Documentation
 

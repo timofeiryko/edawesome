@@ -29,11 +29,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from IPython.display import display, Markdown
 
+<<<<<<< HEAD
+=======
+from scipy.stats import ttest_ind, f_oneway
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 
 from transitions import Machine
 
 from .str_help import generate_attr, snake_to_title, get_files
 from .sns_help import kde_boxen_qq
+<<<<<<< HEAD
 from .pd_help import display_df
 from .eda_help import compare_distributions
 
@@ -41,6 +46,12 @@ from .configs import CATEGORY_MAX
 
 # TODO: add dimensions concept
 # TODO: configure logging as a possible alternative to IPython display
+=======
+from .configs import CATEGORY_MAX
+
+# TODO: add dimensions concept
+# TODO: configure logging, not IPython display
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 
 def basename_no_ext(path: str) -> str:
     return os.path.splitext(os.path.basename(path))[0]
@@ -83,8 +94,11 @@ class EDA:
 
     data_dir_path: str
     kaggle_datasets: Optional[List[str]] = None
+<<<<<<< HEAD
     archives: Optional[List[str]] = None
     # List of supported archives can be found on patool github page: https://github.com/wummel/patool
+=======
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
     # TODO: dictionary with csv files as keys and separator as values
 
     state: Machine = field(init=False)
@@ -119,6 +133,7 @@ class EDA:
         self.state = Machine(states=states, initial='init')
         self.state.add_ordered_transitions(loop=False)
 
+<<<<<<< HEAD
         if self.use_polars and self.use_pyspark:
             raise ValueError('You can use only one of polars or pyspark! Later there will be a map funcionality.')
         
@@ -147,6 +162,13 @@ class EDA:
                 '- `clean` - drop duplicates and missing values (deprecated)'
             ])
             display(Markdown(message))
+=======
+        pd.set_option('display.max_rows', 10)
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
+
+    def next(self) -> None:
+        self.state.next_state()
+        display(Markdown(f'### EDA is in {self.state.state} state now'))
 
     @staticmethod
     def prettify_col_names(df: pd.DataFrame) -> None:
@@ -164,6 +186,7 @@ class EDA:
         # columns to snake case
         df.columns = df.columns.to_series().apply(generate_attr)
 
+<<<<<<< HEAD
     @staticmethod
     def display_df(name: str, df: pd.DataFrame) -> None:
         """Display dataframe with shape."""
@@ -172,6 +195,10 @@ class EDA:
     def _add_df(self, name: str, df):
         """Add dataframe to the EDA object."""
 
+=======
+    def add_df(self, name: str, df: pd.DataFrame):
+
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
         if self.state.state != 'init':
             raise ValueError(f'Dataframes can be added only in init state, not {self.state.state}!')
 
@@ -182,18 +209,28 @@ class EDA:
         self._dataframes_dict[name] = df
 
         if not self.silent:
+<<<<<<< HEAD
             self.display_df(name, df)
 
     def rename_df(self, old_name: str, new_name: str) -> None:
         """Rename the dataframe."""
+=======
+            display(Markdown(f'### {name}'))
+            display(df)
+
+    def rename_df(self, old_name: str, new_name: str) -> None:
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 
         if old_name not in self._dataframes_dict.keys():
             raise ValueError(f'Dataframe with name {old_name} does not exist!')
             
         if new_name in self._dataframes_dict.keys():
             raise ValueError(f'Dataframe with name {new_name} already exists. All filenames must be unique!')
+<<<<<<< HEAD
             # TODO: DRY
             # Separate routine checks (like this one) from the main logic into decorators
+=======
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
     
         self._dataframes_dict[new_name] = self._dataframes_dict.pop(old_name)
 
@@ -230,7 +267,7 @@ class EDA:
                 if self.load_limit:
                     query.replace(';', f'\nLIMIT {self.load_limit};')
                 df = pd.read_sql(query, connection)
-                self._add_df(table, df)
+                self.add_df(table, df)
 
     
     def _load_csv_pyspark(self, file, sep: Optional[str] = None):
@@ -275,14 +312,20 @@ class EDA:
             if file_size > self.pandas_mem_limit and self.use_pyspark:
                 df = self._load_csv_pyspark(file, sep='\t')
             else:
+<<<<<<< HEAD
                 if self.load_limit:
                     df = pd.read_csv(file, sep='\t', nrows=self.load_limit)
                 else:
                     df = pd.read_csv(file, sep='\t')
             
             self._add_df(generate_attr(basename_no_ext(file)), df)
+=======
+                df = pd.read_csv(file, sep='\t')
+            self.add_df(generate_attr(basename_no_ext(file)), df)
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 
         for file in csv_files:
+<<<<<<< HEAD
             
             # TODO: DRY!
             file_size = os.path.getsize(file)
@@ -302,6 +345,10 @@ class EDA:
                         df = pd.read_csv(file, sep=None, engine='python', encoding='latin1')
             
             self._add_df(generate_attr(basename_no_ext(file)), df)
+=======
+            df = pd.read_csv(file, sep=None, engine='python')
+            self.add_df(generate_attr(basename_no_ext(file)), df)
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 
         # TODO: automatic separator detection, files without extension
         # TODO: provide dict with file names or extensions as keys and separators as values
@@ -334,6 +381,9 @@ class EDA:
         if self.state.state != 'init':
             raise ValueError(f'Data can be loaded only in init state, not {self.state.state}!')
 
+        if self.state.state != 'init':
+            raise ValueError(f'Data can be loaded only in init state, not {self.state.state}!')
+
         if not self.silent:
             display(Markdown('# Loading data'))
         
@@ -360,6 +410,7 @@ class EDA:
             display(df.info())
 
             # calculate ratio of nulls in each column
+<<<<<<< HEAD
             nulls = (df.isnull().sum() / len(df)).to_numpy()
             for ratio, col in zip(nulls, df.columns):
                 if ratio:
@@ -368,6 +419,14 @@ class EDA:
                     if ratio > 0.1:
                         message += ' **Consider dropping this column before calling `clean`**'
                     display(Markdown(message))
+=======
+            nulls = df.isnull().sum() / len(df)
+            for ratio, col in zip(nulls, df.columns):
+                if ratio:
+                    display(Markdown(f'**Column {col} has {ratio*100:.2f}% nulls**'))
+                    if ratio > 0.1:
+                        display(Markdown(f'**Consider dropping this column before calling `clean`**'))
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
             
             display(Markdown(f'### Duplicates in {name}'))
             duplicates_num = df.duplicated().sum()
@@ -385,10 +444,13 @@ class EDA:
         display(Markdown(f'**After cleaning is completed, call `eda.next()`**'))
 
     def clean(self, nulls: bool, duplicates: bool) -> None:
+<<<<<<< HEAD
         """Drop rows with nulls or duplicates"""
 
         # WARNING: .any() can caause errors, this method is currently deprecated
         raise DeprecationWarning("This method is deprecated, because it can cause errors in some cases, and it's usually not a good idea just to drop the missing values.")
+=======
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 
         if self.state.state != 'loaded':
             raise ValueError(f'Data can be cleaned only in loaded state, not {self.state.state}!')
@@ -416,6 +478,7 @@ class EDA:
                     print(f'No subset is used by default!')
                 else:
                     print('No duplicates found...')
+<<<<<<< HEAD
 
     def drop_empty_columns(self, treshold: float = 0.1):
         """Drop columns with more than treshold nulls"""
@@ -429,6 +492,10 @@ class EDA:
 
     def categorize(self, subset: Optional[List[str]] = None) -> None:
         """Categorize columns with less than CATEGORY_MAX unique values"""
+=======
+
+    def categorize(self, subset: Optional[List[str]] = None) -> None:
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 
         if self.state.state != 'cleaned':
             raise ValueError(f'Data can be categorized only in cleaned state, not {self.state.state}!')
@@ -462,7 +529,10 @@ class EDA:
         display(Markdown(f'**You can change some categories by hands. After categorization is completed, call `eda.next()`**'))
 
     def explore_numerics(self, subset: Optional[List[str]] = None) -> None:
+<<<<<<< HEAD
         """Explore numeric features"""
+=======
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 
         if self.state.state != 'categorized':
             raise ValueError(f'Data can be explored only in categorized state, not {self.state.state}!')
@@ -477,14 +547,47 @@ class EDA:
             for feature in num_features:
                 kde_boxen_qq(df, feature)
 
+<<<<<<< HEAD
     def explore_categories(self, df_name: Optional[str], subset: Optional[List[str]] = None) -> None:
         """Explore categorical features with countplots"""
 
         if df_name is not None:
             dfs_to_explore = {df_name: self._dataframes_dict[df_name]}
+=======
+    def explore_categories(self, subset: Optional[List[str]] = None) -> None:
+
+        if self.state.state != 'categorized':
+            raise ValueError(f'Data can be explored only in categorized state, not {self.state.state}!')
+        
+        display(Markdown('# Exploring categorical features'))
+
+        for name, df in self._dataframes_dict.items():
+            
+            display(Markdown(f'### Categorical features in {name}'))
+
+            cat_features = list(df.select_dtypes(include='category').columns)
+            for feature in cat_features:
+                
+                sns.countplot(
+                    data=df,
+                    x=feature
+                )
+
+                plt.bar_label(plt.gca().containers[0])
+                plt.title(snake_to_title(feature))
+                sns.despine()
+                plt.show()
+
+    @staticmethod
+    def _print_statistical_test(test_results):
+        print(f'p-value: {test_results.pvalue}')
+        if test_results.pvalue < 0.05:
+            print('Reject null hypothesis!')
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
         else:
             dfs_to_explore = self._dataframes_dict
 
+<<<<<<< HEAD
         if subset is not None:
 
             if not df_name:
@@ -495,6 +598,27 @@ class EDA:
 
         if self.state.state != 'categorized':
             raise ValueError(f'Data can be explored only in categorized state, not {self.state.state}!')
+=======
+    def _select_dimension(self, df_name, col_name):
+
+        if df_name not in self._dataframes_dict.keys():
+            raise ValueError(f'Dataframe {df_name} is not loaded')
+        if col_name not in self._dataframes_dict[df_name].columns:
+            raise ValueError(f'Column {col_name} is not found in {df_name}')
+
+        return self._dataframes_dict[df_name][col_name]
+
+    def compare_distributions(self, df_name, num_col_name, cat_col_name):
+
+        if self.state.state != 'categorized':
+            raise ValueError(f'Data can be compared only in categorized state, not {self.state.state}!')
+
+        sns.displot(
+            data=self._dataframes_dict[df_name],
+            x=num_col_name, hue=cat_col_name,
+            kind='kde', fill=True
+        )
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
         
         display(Markdown('# Exploring categorical features'))
 
@@ -518,6 +642,7 @@ class EDA:
     def _select_dimension(self, df_name, col_name):
         """Select some variable from the dataframe"""
 
+<<<<<<< HEAD
         raise DeprecationWarning('This method is for future use!')
 
         if df_name not in self._dataframes_dict.keys():
@@ -553,11 +678,31 @@ class EDA:
 
         return features_list
 
+=======
+        num_col = self._select_dimension(df_name, num_col_name)
+        cat_col = self._select_dimension(df_name, cat_col_name)
+
+        if self._dataframes_dict[df_name][cat_col_name].nunique() > 2:
+            # ANOVA, comparing num_col distribution by cat_col
+            print('Compare means with ANOVA:')
+            test_results = f_oneway(*[num_col[cat_col == cat] for cat in cat_col.unique()])
+            self._print_statistical_test(test_results)
+        elif self._dataframes_dict[df_name][cat_col_name].nunique() == 2:
+            print('Compare means with t-test:')
+
+            first = num_col[cat_col == cat_col.unique()[0]]
+            second = num_col[cat_col == cat_col.unique()[1]]
+            self._print_statistical_test(ttest_ind(first, second))
+        else:
+            raise ValueError('Categorical feature has only one category!')
+
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
     @property
     def categorical_features(self, df_name: Optional[str] = None):
         return self.get_featues_by_type('category', df_name=df_name)
     
     @property
+<<<<<<< HEAD
     def numeric_features(self, df_name: Optional[str] = None):
         return self.get_featues_by_type('number', df_name=df_name)
 
@@ -574,8 +719,16 @@ class EDA:
             features_list = self._dataframes_dict[df_name].columns.tolist()
 
         return features_list
+=======
+    def numeric_features(self):
+        return [col for df in self._dataframes_dict.values() for col in df.select_dtypes(include='number').columns]
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 
     @property
     def data(self):
         Data = namedtuple('Data', self._dataframes_dict)
+<<<<<<< HEAD
         return Data(**self._dataframes_dict)
+=======
+        return Data(**self._dataframes_dict)
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1

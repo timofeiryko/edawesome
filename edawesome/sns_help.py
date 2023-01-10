@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 """
 Shortcuts and helper functions for seaborn.
 """
 
+=======
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
 from turtle import color
 import pandas as pd
 import numpy as np
@@ -51,15 +54,24 @@ def kde_boxen_qq(
     sns.despine()
     plt.show()
 
+<<<<<<< HEAD
 
 
 #TODO: typing
 def corr_heatmap(df: pd.DataFrame, variables=None, **kwargs):
+=======
+#TODO: typing
+def corr_heatmap(df: pd.DataFrame, variables=None):
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
     
     if variables is None:
         variables = df.columns
 
+<<<<<<< HEAD
     corr_map = df[variables].corr(**kwargs)
+=======
+    corr_map = df[variables].corr(numeric_only=True)
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
     # Zeros instead of diagonal
     corr_map.values[tuple([np.arange(corr_map.shape[0])]) * 2] = np.nan
 
