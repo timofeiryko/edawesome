@@ -77,9 +77,9 @@ Now you can compare some numerical column by category just in one line:
 eda.compare_distributions('application_train', 'ext_source_3', 'target')
 ```
 
-### Real-world example
+### Real-world examples
 
-**Full notebook which was used for examples above can be found in one of my real ML projects.**
+Full notebook which was used for the examples above can be found in [one of my real ML projects](https://github.com/timofeiryko/turing-ml-capstone/blob/master/EDA.ipynb).
 
 ### Documentation
 
