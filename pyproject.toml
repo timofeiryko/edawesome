@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "edawesome"
 version = "0.1.5"
-description = ""
+description = "Quick, easy and customizable data analysis with pandas and seaborn"
 authors = ["Timofei Ryko <timofei.ryko@gmail.com>"]
 readme = "README.md"
 

@@ -10,8 +10,11 @@ def remove_punctuation(s: str) -> str:
 
 def to_snake_case(s: str) -> str:
 
+<<<<<<< HEAD
     s = s.strip().lower()
 
+=======
+>>>>>>> be2797a5b11fbcebb53306d503ac0244060d9ce1
     # split by whitespace symbols
     words = re.split(r'\s+', s)
 
