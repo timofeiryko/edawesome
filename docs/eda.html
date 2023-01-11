@@ -92,6 +92,7 @@ class EDA:
     The only required argument is `data_dir_path`, which is the full path to the folder, where all the data files will be placed. EDAwesome will find all csv/tsv and also sqlite files in this folder and load these files.
 
     Possible data sources:
+    
     - `kaggle_datasets`: list of kaggle datasets to download and extract (like `&#34;swaptr/covid19-state-data&#34;`)
     - `archives`: list of full paths to archives to extract (like `&#34;/home/user/data.zip&#34;`) into the data folder, it supports various formats with patool
     
@@ -642,9 +643,11 @@ class EDA:
 <dd>
 <div class="desc"><p>Main class for simple and robust EDA with pandas and seaborn.</p>
 <p>The only required argument is <code>data_dir_path</code>, which is the full path to the folder, where all the data files will be placed. EDAwesome will find all csv/tsv and also sqlite files in this folder and load these files.</p>
-<p>Possible data sources:
-- <code>kaggle_datasets</code>: list of kaggle datasets to download and extract (like <code>"swaptr/covid19-state-data"</code>)
-- <code>archives</code>: list of full paths to archives to extract (like <code>"/home/user/data.zip"</code>) into the data folder, it supports various formats with patool</p>
+<p>Possible data sources:</p>
+<ul>
+<li><code>kaggle_datasets</code>: list of kaggle datasets to download and extract (like <code>"swaptr/covid19-state-data"</code>)</li>
+<li><code>archives</code>: list of full paths to archives to extract (like <code>"/home/user/data.zip"</code>) into the data folder, it supports various formats with patool</li>
+</ul>
 <p>Boolean options:</p>
 <ul>
 <li><code>silent</code>: if True, during loading the dataframes will be shown</li>
@@ -670,6 +673,7 @@ class EDA:
     The only required argument is `data_dir_path`, which is the full path to the folder, where all the data files will be placed. EDAwesome will find all csv/tsv and also sqlite files in this folder and load these files.
 
     Possible data sources:
+    
     - `kaggle_datasets`: list of kaggle datasets to download and extract (like `&#34;swaptr/covid19-state-data&#34;`)
     - `archives`: list of full paths to archives to extract (like `&#34;/home/user/data.zip&#34;`) into the data folder, it supports various formats with patool
     

@@ -63,6 +63,7 @@ class EDA:
     The only required argument is `data_dir_path`, which is the full path to the folder, where all the data files will be placed. EDAwesome will find all csv/tsv and also sqlite files in this folder and load these files.
 
     Possible data sources:
+    
     - `kaggle_datasets`: list of kaggle datasets to download and extract (like `"swaptr/covid19-state-data"`)
     - `archives`: list of full paths to archives to extract (like `"/home/user/data.zip"`) into the data folder, it supports various formats with patool
     
