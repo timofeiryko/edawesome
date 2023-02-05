@@ -1,6 +1,6 @@
 # EDAwesome
 
-This is a package for quick, easy and customizable data analysis with pandas and seaborn. We automate all the routine so you can focus on the data. Clear and cuztomizable workflow is proposed.
+This is a package for quick, easy and customizable data analysis with pandas and seaborn. We automate all the routine so you can focus on the data. Clear and cuztomizable workflow is proposed. Check [my talk](https://youtu.be/g6qOyCaiuHI) about EDA good practices and the concepts of this library.
 
 ## Installation
 
